@@ -8,13 +8,9 @@ class Solution {
         for(int j=1;j<nums.length;j++){
             if(nums[j]==nums[j-1]){
                 i=j;
-    
                 break;
             }
         }
-       
-      
-
         int j=i+1;
         while(j<nums.length){
             if(i>0 &&nums[j]!=nums[i] && nums[i-1]!=nums[j]){
@@ -27,7 +23,6 @@ class Solution {
             }
            
         }
-
     return i;
     }
 }
