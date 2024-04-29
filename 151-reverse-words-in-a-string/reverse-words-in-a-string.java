@@ -15,7 +15,7 @@ class Solution {
                 helper+=s.charAt(j);
                 j++;
             }
-            if(helper.length() != 0 && processed.length() == 0){
+            if( processed.length() == 0){
                 processed = helper+ processed ;
             }else if(helper.length() != 0 && processed.length() != 0) {
                 processed = helper + " "+ processed ;
