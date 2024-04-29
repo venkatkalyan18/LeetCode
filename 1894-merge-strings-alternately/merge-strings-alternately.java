@@ -1,18 +1,20 @@
 class Solution {
     public String mergeAlternately(String word1, String word2) {
-        String result="";
-        int i=0;
-        while(i<word1.length() || i<word2.length()){
-            if(i<word1.length()){
-                result+=word1.charAt(i);
+        String processed = "";
+        int x = 0;
+        int y= 0;
+        while(x!=word1.length() || y!=word2.length()){
+            if(x!=word1.length()){
+                processed+=word1.charAt(x);
+                x++;
             }
-            if(i<word2.length()){
-                result+=word2.charAt(i);
+            if(y!=word2.length()){
+                processed+=word2.charAt(y);
+                y++;
             }
-
-            i++;
         }
-         return result;
 
+        return processed;
+        
     }
 }
