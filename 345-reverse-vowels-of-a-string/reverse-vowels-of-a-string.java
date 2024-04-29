@@ -5,20 +5,17 @@ class Solution {
          int i=0;
          int j=s.length()-1;
          while(i<j){
-            if(vowels.indexOf(sb.charAt(i)) != -1&& vowels.indexOf(sb.charAt(j)) != -1){
-                if(sb.charAt(i) != sb.charAt(j)){
-                    char temp = sb.charAt(i);
-                    sb.setCharAt(i,sb.charAt(j));
-                    sb.setCharAt(j,temp);
-                }
+            while(i<j && vowels.indexOf(sb.charAt(i)) == -1){
                 i++;
+            }
+            while(i<j && vowels.indexOf(sb.charAt(j)) == -1){
                 j--;
             }
-                else if(vowels.indexOf(sb.charAt(i)) == -1){
-                    i++;
-                }else{
-                    j--;
-                }
+            char temp = sb.charAt(i);
+            sb.setCharAt(i,sb.charAt(j));
+            sb.setCharAt(j,temp);
+            i++;
+            j--;
             
          }
          return sb.toString();
