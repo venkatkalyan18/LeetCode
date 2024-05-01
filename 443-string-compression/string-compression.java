@@ -12,13 +12,10 @@ class Solution {
                 i++;
                 count++;
             }
-            if(count==1){
                 sb.append(sy);
-            }else{
-                sb.append(sy);
-                sb.append(count);
-            }
-                
+                if(count!=1){
+                    sb.append(count);
+                } 
         }
         System.out.print(sb);
        char[] compressedChars = sb.toString().toCharArray();
