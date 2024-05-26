@@ -5,22 +5,13 @@ class Solution {
         while(i<word.length()){
             char ch = word.charAt(i);
             int count  = 0;
-            while(i<word.length() && ch == word.charAt(i)){
+            while(i<word.length() && ch == word.charAt(i) && count < 9){
                 i++;
                 count++;
             }
-
-            while(count -9  >= 0){
-                ans = ans + 9 + "" + ch;
-                count-=9;
-            }
-
-            if(count>0){
+           
                 ans = ans + count + "" + ch;
-            }
-
         }
-
         return ans;
     }
 }
