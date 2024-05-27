@@ -12,9 +12,7 @@ class Solution {
             if(j >= energy.length){
                   ans = Math.max(ans,sum);
             }
-          
             i++;
-
         }
 
         int m = energy.length-1;
