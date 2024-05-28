@@ -7,10 +7,10 @@ class Solution {
             set.add(i);
         }
 
-        for(int i=0;i<nums.length;i++){
+        for(int i :set){
             int count= 0;
-            if(!set.contains(nums[i]-1)){
-                int j = nums[i];
+            if(!set.contains(i-1)){
+                int j = i;
                 while(set.contains(j)){
                     count++;
                     j++;
