@@ -12,8 +12,6 @@ class Solution {
                 index = word.charAt(i)-'a';
                 smallLettersArray[index]=1;
             }
-            
-     
         }
 
         for(int i=0;i<26;i++){
