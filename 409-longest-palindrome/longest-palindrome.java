@@ -11,15 +11,14 @@ class Solution {
             }
         }
 
-        boolean isSingleLetter = false;
+
 
         for(char ch: map.keySet()){
             if(map.get(ch) % 2 == 0){
                 ans=ans+map.get(ch);
             }else{
-                if(!isSingleLetter){
+                if(ans % 2 == 0){
                     ans = ans + 1;
-                    isSingleLetter = true;
                 }
                 ans = ans + (map.get(ch) - 1);
             }
