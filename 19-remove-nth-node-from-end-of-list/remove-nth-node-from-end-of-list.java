@@ -46,8 +46,6 @@ class Solution {
             return s;
         }
 
-        System.out.println(s);
-
         return s+1;
     }
 }
