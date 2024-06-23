@@ -15,15 +15,12 @@ class Solution {
         int carry = 0;
         while(l1 != null && l2!= null){
             int sum = l1.val+l2.val+carry;
-            carry = 0;
-            if(sum > 9){
-                carry = sum / 10;
-                sum = sum % 10;
+            carry = sum / 10;
+            sum = sum % 10;
                 
-            }
 
-            ListNode temp = new ListNode(sum);
-            curr.next = temp;
+            l2.val = sum;
+            curr.next = l2;
             curr = curr.next;
             l1 = l1.next;
             l2 = l2.next;
@@ -31,32 +28,28 @@ class Solution {
 
         while(l1 != null){
             int sum = l1.val+carry;
-            carry = 0;
-            if(sum > 9){
-                carry = sum / 10;
-                sum = sum % 10;
+         
+            carry = sum / 10;
+            sum = sum % 10;
                 
-            }
+      
 
             ListNode temp = new ListNode(sum);
             curr.next = temp;
             curr = curr.next;
-             l1 = l1.next;
+            l1 = l1.next;
         }
 
          while(l2 != null){
             int sum = l2.val+carry;
-            carry = 0;
-            if(sum > 9){
-                 carry = sum / 10;
-                sum = sum % 10;
+    
+            carry = sum / 10;
+            sum = sum % 10;
                
-            }
-
-             ListNode temp = new ListNode(sum);
+            ListNode temp = new ListNode(sum);
             curr.next = temp;
-                 curr = curr.next;
-             l2 = l2.next;
+            curr = curr.next;
+            l2 = l2.next;
         }
 
         if(carry != 0){
