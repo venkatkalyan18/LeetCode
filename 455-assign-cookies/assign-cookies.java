@@ -4,18 +4,15 @@ class Solution {
         int j = 0;
         Arrays.sort(g);
         Arrays.sort(s);
-        int ans = 0;
-        while(i < g.length && j<s.length){
-            while(j<s.length && g[i] > s[j]){
-                j++;
+        while(i<g.length && j<s.length){
+            if(g[i] <= s[j]){
+                i++;
             }
-            if(j<s.length && g[i] <= s[j]){
-                ans++;
-            }
-            i++;
+
             j++;
         }
 
-        return ans;
+        return i;
+    
     }
 }
