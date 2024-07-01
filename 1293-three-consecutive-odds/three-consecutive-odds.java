@@ -3,7 +3,7 @@ class Solution {
         int i = 0;
         while(i<arr.length){
             int k = 0;
-            while(i<arr.length && arr[i] % 2 != 0){
+            while(i<arr.length && arr[i] % 2 != 0 && k<=3){
                 i++;
                 k++;
             }
