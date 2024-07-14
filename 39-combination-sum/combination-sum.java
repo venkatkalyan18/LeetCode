@@ -7,10 +7,12 @@ class Solution {
 
     public void helper(int[] arr,int i,int target,List<List<Integer>> ans,List<Integer> list){
         if(i == arr.length){
-            if(target == 0){
-                ans.add(new ArrayList<>(list));
-            }
             return;
+        }
+
+        if(target == 0){
+             ans.add(new ArrayList<>(list));
+             return;
         }
 
         if(target < 0){
