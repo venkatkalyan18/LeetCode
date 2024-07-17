@@ -1,12 +1,6 @@
 class Solution {
     public List<List<String>> solveNQueens(int n) {
-        if(n == 1){
-            List<String> li = new ArrayList<>();
-            li.add("Q");
-            List<List<String>> result = new ArrayList<>();
-            result.add(new ArrayList<>(li));
-            return result;
-        }
+       
         List<List<String>> ans = new ArrayList<>();
         boolean[][] board = new boolean[n][n];
         helper(n,0,board,new ArrayList<>(),ans);
