@@ -13,9 +13,9 @@ class Solution {
             int mid = (left+right)/2;
             if(arr[mid] < target){
                 first = mid;
-                left = left + 1;
+                left = mid + 1;
             }else{
-                right = right -1;
+                right = mid -1;
             }
         }
 
