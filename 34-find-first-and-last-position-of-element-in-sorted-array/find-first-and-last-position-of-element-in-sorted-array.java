@@ -11,7 +11,7 @@ class Solution {
         int first = -1;
         while(left <= right){
             int mid = (left+right)/2;
-            if(arr[mid] < target){
+            if(arr[mid] <= target){
                 first = mid;
                 left = mid + 1;
             }else{
@@ -19,16 +19,16 @@ class Solution {
             }
         }
 
-        if(first + 1 == arr.length || arr[first+1] != target){
-            return new int[]{-1,-1};
+        if(first ==  -1 || arr[first] != target){
+             return new int[]{-1,-1};
         }
-
+        
         left = 0;
         right = arr.length-1;
         int last = arr.length;
         while(left <= right){
             int mid = (left+right)/2;
-            if(arr[mid] > target){
+            if(arr[mid] >= target){
                 last = mid;
                 right = mid - 1;
             }else{
@@ -36,7 +36,7 @@ class Solution {
             }
         }
 
-        return new int[]{first+1,last-1};
+        return new int[]{last,first};
 
         
     }
