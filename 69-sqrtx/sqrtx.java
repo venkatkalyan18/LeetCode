@@ -9,7 +9,7 @@ class Solution {
             if ((long) mid * mid == x) {
                 return mid;
             }
-            if ((long) mid * mid > x) {
+            if ( (long)mid * mid > x) {
                 j = mid - 1;
             } else {
                 i = mid + 1;
