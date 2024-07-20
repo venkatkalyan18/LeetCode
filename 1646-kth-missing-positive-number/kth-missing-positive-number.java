@@ -3,6 +3,7 @@ class Solution {
  
         int i = 0;
         int j = 1;
+        int x = k;
         while(i<arr.length){
 
             if(arr[i] == j){
@@ -17,6 +18,6 @@ class Solution {
             }
         }
 
-         return j + k - 1;
+         return arr.length + x;
     }
 }
