@@ -8,8 +8,9 @@ class Solution {
                 return true;
             }
 
-            if(arr[left] == arr[right]){
+            if(arr[left] == arr[mid] && arr[right] == arr[mid]){
                 left++;
+                right--;
                 continue;
             }
 
