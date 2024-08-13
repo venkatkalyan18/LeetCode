@@ -7,6 +7,7 @@ class Solution {
             l *= nums[i];
             ans[i] = l;
         }
+        
         int r = 1;
         ans[ans.length-1] = ans[ans.length-2];
         for(int i = nums.length-1;i>=2;i--){
