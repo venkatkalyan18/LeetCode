@@ -9,7 +9,6 @@ class Solution {
                 if(five <= 0){
                     return false;
                 }
-
                 ten++;
                 five--;
             }else{
