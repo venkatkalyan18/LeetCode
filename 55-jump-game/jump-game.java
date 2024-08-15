@@ -1,12 +1,12 @@
 class Solution {
     public boolean canJump(int[] nums) {
-        int maxLen = 0;
-        for(int i = 0;i<nums.length;i++){
-            if(maxLen < i){
+        int maxDistance = 0;
+        for(int i=0;i<nums.length;i++){
+            if(i > maxDistance){
                 return false;
             }
 
-            maxLen = Math.max(maxLen,i+nums[i]);
+            maxDistance = Math.max(maxDistance,nums[i] + i);
         }
 
         return true;
