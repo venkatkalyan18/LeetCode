@@ -7,8 +7,8 @@ class Solution {
             int profit = prices[right]  - prices[left];
             ans = Math.max(ans,profit);
             if(prices[left] > prices[right]){
-                left = right;
-                right++;
+                left++;
+                right = left + 1;
             }else{
                 right++;
             }
