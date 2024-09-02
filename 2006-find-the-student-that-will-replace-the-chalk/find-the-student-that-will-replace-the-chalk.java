@@ -5,16 +5,14 @@ class Solution {
             sum += j;
         }
         
-    
         k %= sum;
 
-        for (int i = 0; i < chalk.length; i++) {
-            if (k < chalk[i]) {
-                return i;
-            }
+        int i = 0;
+        while (k >= chalk[i]) {
             k -= chalk[i];
+            i++;
         }
         
-        return -1; 
+        return i;
     }
 }
