@@ -6,11 +6,10 @@ class Solution {
             processed = processed + "" + ((int) s.charAt(i) -96);
         }
         while(k != 0){
-           int temp = 0;
+           ans = 0;
            for(int i=0;i<processed.length();i++){
-            temp = temp +processed.charAt(i) - '0'; 
+            ans = ans +processed.charAt(i) - '0'; 
            }
-           ans = temp;
            processed = ans + "";
            k--;
         }
