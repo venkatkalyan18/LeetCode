@@ -3,7 +3,7 @@ class Solution {
         int prev = 0;
         long ans = 0;
         for(int i=1;i<nums.size();i++){
-            if(nums.get(prev) <= nums.get(i)){
+            if(nums.get(prev) < nums.get(i)){
                 ans+=(long)(i-prev) * nums.get(prev);
                 prev = i;
             }
