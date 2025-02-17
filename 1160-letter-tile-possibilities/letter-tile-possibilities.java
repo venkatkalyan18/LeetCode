@@ -1,24 +1,25 @@
+import java.util.Arrays;
+
 class Solution {
     public int numTilePossibilities(String tiles) {
-        Set<String> set = new HashSet<>();
-        boolean[] isVisited = new boolean[tiles.length()];
-        helper(tiles,isVisited,set,"");
-        return set.size();
+        char[] arr = tiles.toCharArray();
+        Arrays.sort(arr); 
+        return helper(arr, new boolean[arr.length]);
     }
 
-    public void helper(String str,boolean[] isVisited,Set<String> set,String up){
-        if(up.length() == str.length()){
-            return ;
-        }
+    public int helper(char[] tiles, boolean[] isUsed) {
+        int count = 0;
+        for (int i = 0; i < tiles.length; i++) {
+            if (isUsed[i]) continue;
 
-        for(int i=0;i<str.length();i++){
-            if(!isVisited[i]){
-                isVisited[i] = true;
-                String s = up + str.charAt(i);
-                set.add(s);
-                helper(str,isVisited,set,s);
-                isVisited[i] = false;
+            if (i > 0 && tiles[i] == tiles[i - 1] && !isUsed[i - 1]) {
+                continue;
             }
+
+            isUsed[i] = true;
+            count += 1 + helper(tiles, isUsed);
+            isUsed[i] = false;
         }
+        return count;
     }
 }
