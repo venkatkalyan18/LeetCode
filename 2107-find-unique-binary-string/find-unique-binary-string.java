@@ -1,27 +1,33 @@
 class Solution {
-
-    boolean isNum = false;
-    String res  = "";
     public String findDifferentBinaryString(String[] nums) {
         Set<String> set = new HashSet<>();
-         for(String num : nums){
+        for(String num: nums){
             set.add(num);
         }
-        helper(set,"",nums[0].length());
-        return res;
+        return helper(set, nums.length,new StringBuilder(),0);
     }
 
-    public void helper(Set<String> set,String p,int n){
-        if(p.length() == n){
-            if(!set.contains(p)){
-                isNum = true;
-                res = p;
+    public String helper(Set<String> set, int n,StringBuilder currString, int currSize){
+        if(n == currSize){
+            if(!set.contains(currString.toString())){
+                return currString.toString();
             }
-            return ;
+
+            return "";
         }
-        if(!isNum){
-            helper(set,p+"0",n);
-            helper(set,p+"1",n);
+        currString.append('0');
+        String zero = helper(set,n,currString ,currSize + 1);
+        currString.deleteCharAt(currString.length()-1);
+        if(zero.length() > 0 ){
+            return zero;
         }
+        currString.append('1');
+        String one  = helper(set,n,currString ,currSize + 1);
+        currString.deleteCharAt(currString.length()-1);
+        if(one.length() > 0 ){
+            return one;
+        }
+
+        return "";
     }
 }
