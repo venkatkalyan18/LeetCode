@@ -1,18 +1,12 @@
 class Solution {
     public int subsetXORSum(int[] nums) {
-        int[] res = new int[1];
-        helper(nums,0,0,res);
-        return res[0];
+        return helper(nums,0,0);
     }
 
-    public void helper(int[] nums, int val,int i,int[] sum){
+    public int helper(int[] nums, int val,int i){
         if(i >= nums.length){
-            return;
+            return 0;
         }
-
-        sum[0] += val ^ nums[i];
-        helper(nums,val ^ nums[i],i+1,sum);
-        helper(nums,val,i+1,sum);
-
+       return (val ^ nums[i]) +  helper(nums,val ^ nums[i],i+1) + helper(nums,val,i+1);
     }
 }
