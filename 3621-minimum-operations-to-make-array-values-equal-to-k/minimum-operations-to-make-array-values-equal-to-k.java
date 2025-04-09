@@ -17,7 +17,7 @@ class Solution {
        }
 
        if(nums[0] > k){
-            return res ;
+            return res;
        }
 
        return -1;
