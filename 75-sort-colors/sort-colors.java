@@ -1,21 +1,21 @@
 class Solution {
     public void sortColors(int[] nums) {
-        HashMap<Integer,Integer> map = new HashMap<>();
-
-        for(int i : nums){
-            if(!map.containsKey(i)){
-                map.put(i,1);
-            }else{
-                map.put(i,map.get(i)+1);
+        int left = 0;
+        int mid = 0;
+        int right = nums.length-1;
+        while(mid <= right){
+            if(nums[mid] == 2){
+                nums[mid] = nums[right];
+                nums[right--] = 2;
+                continue;
+            }if(nums[mid] == 0){
+                int temp = nums[left];
+                nums[left] = nums[mid];
+                nums[mid] = temp;
+                left++;
             }
-        }
-        int k = 0;
-        for(int i=0;i<3;i++){
-            if(map.containsKey(i)){
-                for(int j =0;j<map.get(i);j++){
-                nums[k++] = i;
-            }
-            } 
+            mid++;
         }
     }
 }
+
