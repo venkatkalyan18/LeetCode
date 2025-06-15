@@ -17,8 +17,6 @@ class Solution {
             }
         }
 
-        System.out.println(maxi);
-
         i = 0;
         while(i < len && (n.charAt(i) == '1' || n.charAt(i) == '0')){
             min += n.charAt(i);
@@ -36,11 +34,9 @@ class Solution {
             }else{
                 min += n.charAt(j);
             }
+
         }
-
-        System.out.println(min);
-
-
+        
 
         int x = Integer.parseInt(maxi);
         int y = Integer.parseInt(min);
