@@ -2,24 +2,25 @@ class Solution {
     public int maxDiff(int num) {
         String n = num + "";
         int len = n.length();
-        String maxi = "";
-        String min = "";
+        
+        StringBuilder maxi = new StringBuilder();
+        StringBuilder min = new StringBuilder();
         int i = 0;
         while(i < len && n.charAt(i) == '9'){
-            maxi += '9';
+            maxi.append('9');
             i++;
         }
         for(int j = i;j<n.length();j++){
             if(n.charAt(j) == n.charAt(i)){
-                maxi += '9';
+                 maxi.append('9');
             }else{
-                maxi += n.charAt(j);
+                 maxi.append(n.charAt(j));
             }
         }
 
         i = 0;
         while(i < len && (n.charAt(i) == '1' || n.charAt(i) == '0')){
-            min += n.charAt(i);
+            min.append(n.charAt(i));
             i++;
         }
 
@@ -27,24 +28,20 @@ class Solution {
         for(int j =i;j<len;j++){
             if(n.charAt(i) == n.charAt(j)){
                 if(i == 0){
-                    min += '1';
+                    min.append('1');
                 }else{
-                    min += '0';
+                    min.append('0');
                 }
             }else{
-                min += n.charAt(j);
+                min.append(n.charAt(j));
             }
 
         }
         
 
-        int x = Integer.parseInt(maxi);
-        int y = Integer.parseInt(min);
+        int x = Integer.parseInt(new String(maxi));
+        int y = Integer.parseInt(new String(min));
 
         return x - y;
-
-
-
-
     }
 }
