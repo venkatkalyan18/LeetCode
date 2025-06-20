@@ -9,13 +9,16 @@ class Solution {
 
                 for (int i = 0; i < s.length(); i++) {
                     char ch = s.charAt(i);
-
-                    if (ch == hor && remainingK > 0) {
-                        ch = (ch == 'W') ? 'E' : 'W';
-                        remainingK--;
-                    } else if (ch == ver && remainingK > 0) {
-                        ch = (ch == 'S') ? 'N' : 'S';
-                        remainingK--;
+                    if(ch == 'N' || ch == 'S'){
+                        if(ch != ver && remainingK > 0){
+                            ch = (ch == 'N' ? 'S' : 'N');
+                            remainingK--;
+                        }
+                    } else if (ch == 'E' || ch == 'W') {
+                        if(ch != hor && remainingK > 0){
+                            ch = (ch == 'E' ? 'W' : 'E');
+                            remainingK--;
+                        }
                     }
 
                     if (ch == 'E') netX++;
