@@ -1,31 +1,19 @@
-import java.util.*;
-
 class Solution {
+    public int solve(int []ch,int i,int j,int k,int dp[][]){
+        if(i==j || ch[j]-ch[i]<=k) return 0;
+        if(dp[i][j]!=-1) return dp[i][j];
+        return dp[i][j]=Math.min(ch[i]+solve(ch,i+1,j,k,dp), ch[j]-ch[i]-k+solve(ch,i,j-1,k,dp));
+    }
     public int minimumDeletions(String w, int k) {
-        HashMap<Character, Integer> map = new HashMap<>();
-        for (char ch : w.toCharArray()) {
-            map.put(ch, map.getOrDefault(ch, 0) + 1);
+        
+        int ch[] = new int[26];
+        for (char c : w.toCharArray()) {
+            ch[c - 'a']++;
         }
-
-        List<Integer> freqList = new ArrayList<>(map.values());
-
-
-        int res = Integer.MAX_VALUE;
-        for (int i = 0; i < freqList.size(); i++) {
-            int minFreq = freqList.get(i);
-            int deletions = 0;
-
-            for (int j = 0; j < freqList.size(); j++) {
-                int freq = freqList.get(j);
-                if (freq > minFreq + k) {
-                    deletions += freq - (minFreq + k); 
-                } else if (freq < minFreq) {
-                    deletions += freq; 
-                }
-            }
-            res = Math.min(res, deletions);
-        }
-
-        return res;
+        
+        Arrays.sort(ch);
+        int dp[][]=new int[26][26];
+        for(int row[]: dp) Arrays.fill(row,-1);
+        return solve(ch,0,25,k,dp);
     }
 }
