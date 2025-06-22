@@ -8,11 +8,7 @@ class Solution {
         int x = 0;
 
         for(int i=0;i<=s.length()-k;i+=k){
-            String temp = "";
-            for(int j=i;j<i+k;j++){
-                temp = temp + s.charAt(j) + "";
-            }
-           
+            String temp = s.substring(i,i+k);
             res[x++] = temp;
         }
 
