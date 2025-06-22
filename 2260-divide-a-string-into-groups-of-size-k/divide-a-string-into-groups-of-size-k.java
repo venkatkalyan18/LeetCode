@@ -3,7 +3,6 @@ class Solution {
         while(s.length() % k != 0){
             s = s + fill;
         }
-        System.out.println(s);
         String[] res = new String[(s.length()/k)];
         int x = 0;
 
