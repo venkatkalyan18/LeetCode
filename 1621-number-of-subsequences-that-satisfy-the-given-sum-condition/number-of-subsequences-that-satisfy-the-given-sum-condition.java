@@ -27,7 +27,7 @@ class Solution {
                 }
             }
 
-            if (idx >= i) {
+            if (idx != -1) {
                 res = (res + pow2[idx - i]) % mod;
             }
         }
