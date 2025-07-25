@@ -5,9 +5,7 @@ class Solution {
         int max = Integer.MIN_VALUE;
         for(int i : nums){
             max = Math.max(max,i);
-            if(i < 0){
-                continue;
-            }
+            if(i < 0) continue;
             if(!map[i]){
                 res += i;
                 map[i] = true;
