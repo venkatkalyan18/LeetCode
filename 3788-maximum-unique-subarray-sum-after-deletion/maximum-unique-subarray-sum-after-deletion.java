@@ -13,9 +13,6 @@ class Solution {
                 map[i] = true;
             }
         }
-        if(max < 0){
-            return max;
-        }
-        return res;
+        return max < 0 ? max : res;
     }
 }
