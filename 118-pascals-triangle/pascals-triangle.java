@@ -1,21 +1,16 @@
 class Solution {
     public List<List<Integer>> generate(int numRows) {
-
-        List<List<Integer>> ans = new ArrayList<>();
-        for(int i = 0;i<numRows;i++){
-            List<Integer> list = new ArrayList<>();
-            for(int j = 0;j<=i;j++){
+        List<List<Integer>> li = new ArrayList<>();
+        for(int i=0;i<numRows;i++){
+            li.add(new ArrayList<>());
+            for(int j=0;j<=i;j++){
                 if(j == 0 || j == i){
-                    list.add(1);
+                    li.get(i).add(1);
                 }else{
-                    int sum = ans.get(i-1).get(j-1) + ans.get(i-1).get(j);
-                    list.add(sum);
+                    li.get(i).add(li.get(i-1).get(j-1) + li.get(i-1).get(j));
                 }
             }
-
-            ans.add(list);
         }
-
-        return ans;
+        return li;
     }
 }
