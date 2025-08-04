@@ -19,13 +19,11 @@ class Solution {
                     nums[1] = fruits[i];
                 }
             }
-
             if(nums[0] == fruits[i]){
                 numIdx[0] = i;
             }else if(nums[1] == fruits[i]){
                 numIdx[1] = i;
             }
-
             res = Math.max(res,i - left + 1);
         }
 
