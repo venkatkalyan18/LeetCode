@@ -10,10 +10,10 @@ class Solution {
             maxFreq = Math.max(maxFreq,map[s.charAt(right) - 'A']);
             while((right - left + 1) - maxFreq > k){
                 map[s.charAt(left) - 'A']--;
-                maxFreq = 0;
-                for(int i=0;i<26;i++){
-                    maxFreq = Math.max(maxFreq,map[i]);
-                }
+                // maxFreq = 0;
+                // for(int i=0;i<26;i++){
+                //     maxFreq = Math.max(maxFreq,map[i]);
+                // }
                 left++;
             } 
             res = Math.max(res,right-left+1);
