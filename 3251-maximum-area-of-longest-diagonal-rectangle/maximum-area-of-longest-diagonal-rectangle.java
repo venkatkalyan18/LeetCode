@@ -7,7 +7,7 @@ class Solution {
             int length = d[0];
             int width = d[1];
             int area = length * width;
-            double diagonal = Math.sqrt(length * length + width * width);
+            double diagonal = length * length + width * width;
 
             if (diagonal > maxDiag) {
                 maxDiag = diagonal;
