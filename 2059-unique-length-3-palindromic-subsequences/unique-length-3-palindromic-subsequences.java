@@ -25,7 +25,6 @@ class Solution {
                     isTaken[c-'a'] = true;
                 }
             }
-            
         }
         return res;
     }
